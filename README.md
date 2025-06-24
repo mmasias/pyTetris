@@ -1,7 +1,14 @@
 # pyTetris
 
-Un Tetris ascii
+Un Tetris ASCII
 
+<div align=center>
+
+|![](/images/modelosUML/MdD.svg)
+|:-:
+|Modelo del dominio: [Código fuente](/modelosUML/MdD.puml)
+
+</div>
 
 ```console
 <!=======================!>
