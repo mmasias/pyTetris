@@ -1,11 +1,9 @@
 class Piece {
     private boolean[][] shape;
     private Position position;
-    private char symbol;
 
-    public Piece(boolean[][] shape, char symbol) {
+    public Piece(boolean[][] shape) {
         this.shape = shape;
-        this.symbol = symbol;
         this.position = new Position(0, 0);
     }
 
@@ -15,10 +13,6 @@ class Piece {
 
     public Position getPosition() {
         return position;
-    }
-
-    public char getSymbol() {
-        return symbol;
     }
 
     public void moveDown() {

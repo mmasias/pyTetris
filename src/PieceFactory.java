@@ -1,33 +1,37 @@
 public class PieceFactory {
-    public static Piece createIPiece() {
+    public static PieceView createIPieceView() {
         boolean[][] shape = {
                 { true, true, true, true }
         };
-        return new Piece(shape, 'I');
+        Piece piece = new Piece(shape);
+        return new PieceView(piece, 'I');
     }
 
-    public static Piece createOPiece() {
+    public static PieceView createOPieceView() {
         boolean[][] shape = {
                 { true, true },
                 { true, true }
         };
-        return new Piece(shape, 'O');
+        Piece piece = new Piece(shape);
+        return new PieceView(piece, 'O');
     }
 
-    public static Piece createTPiece() {
+    public static PieceView createTPieceView() {
         boolean[][] shape = {
                 { false, true, false },
                 { true, true, true }
         };
-        return new Piece(shape, 'T');
+        Piece piece = new Piece(shape);
+        return new PieceView(piece, 'T');
     }
 
-    public static Piece createLPiece() {
+    public static PieceView createLPieceView() {
         boolean[][] shape = {
                 { true, false },
                 { true, false },
                 { true, true }
         };
-        return new Piece(shape, 'L');
+        Piece piece = new Piece(shape);
+        return new PieceView(piece, 'L');
     }
 }
