@@ -38,3 +38,7 @@ Score: 0
 
 Comando (4=izq, 6=der, 7=rotar↺, 9=rotar↻): 
 ```
+
+# 2Think
+
+- [¿Vale la pena la herencia?](valeLaPenaLaHerencia.md)
