@@ -16,11 +16,17 @@ public class Tetris {
                 PieceFactory.createIPiece(),
                 PieceFactory.createOPiece(),
                 PieceFactory.createTPiece(),
-                PieceFactory.createLPiece()
+                PieceFactory.createLPiece(),
+                PieceFactory.createJPiece(),
+                PieceFactory.createSPiece(),
+                PieceFactory.createZPiece()
         };
-
-        int randomIndex = (int) (Math.random() * pieces.length);
-        board.setCurrentPiece(pieces[randomIndex]);
+//7bag system to be added!!!
+        for (int i=7;i>0;i--) {
+            int randomIndex = (int) (Math.random() * pieces.length);
+            
+            board.setCurrentPiece(pieces[randomIndex]);
+        }
     }
 
     private void processUserInput(String input) {
