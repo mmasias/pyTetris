@@ -30,4 +30,26 @@ public class PieceFactory {
         };
         return new Piece(shape, 'L');
     }
+        public static Piece createJPiece() {
+        boolean[][] shape = {
+                { false, true },
+                { false, true },
+                { true, true }
+        };
+        return new Piece(shape, 'J');
+    }
+        public static Piece createSPiece() {
+        boolean[][] shape = {
+                { false, true, true },
+                { true, true, false }
+        };
+        return new Piece(shape, 'S');
+    }
+        public static Piece createZPiece() {
+        boolean[][] shape = {
+                { true, true, false },
+                { false, true, true }
+        };
+        return new Piece(shape, 'Z');
+    }
 }
