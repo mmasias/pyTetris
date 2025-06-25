@@ -1,17 +1,27 @@
 public class Tetris {
     private Board board;
+    private BoardView boardView;
     private boolean gameRunning;
     private int score;
     private Console console;
+    private PieceView currentPieceView;
 
     public Tetris(int width, int height) {
-        board = new Board(width, height, new Console());
+        console = new Console();
+        board = new Board(width, height);
+        boardView = new BoardView(console);
         gameRunning = true;
         score = 0;
-        console = new Console();
     }
 
     public void spawnNewPiece() {
+        Piece[] pieces = {
+                PieceFactory.createIPiece(),
+                PieceFactory.createOPiece(),
+                PieceFactory.createTPiece(),
+                PieceFactory.createLPiece()
+        };
+
         PieceView[] pieceViews = {
                 PieceFactory.createIPieceView(),
                 PieceFactory.createOPieceView(),
@@ -19,15 +29,15 @@ public class Tetris {
                 PieceFactory.createLPieceView()
         };
 
-        int randomIndex = (int) (Math.random() * pieceViews.length);
-        board.setCurrentPieceView(pieceViews[randomIndex]);
+        int randomIndex = (int) (Math.random() * pieces.length);
+        board.setCurrentPiece(pieces[randomIndex]);
+        currentPieceView = pieceViews[randomIndex];
     }
 
     private void processUserInput(String input) {
         if (input.length() != 0) {
             char command = input.charAt(0);
-            PieceView currentPieceView = board.getCurrentPieceView();
-            Piece currentPiece = currentPieceView.getPiece();
+            Piece currentPiece = board.getCurrentPiece();
 
             switch (command) {
                 case '4' -> {
@@ -47,17 +57,16 @@ public class Tetris {
     public void gameLoop() {
         spawnNewPiece();
         while (gameRunning) {
-            board.display();
+            boardView.display(board, currentPieceView);
             String input = console.readString("Score: " + score + "\n\nComando (4=izq, 6=der, 7=rotar↺, 9=rotar↻): ");
             processUserInput(input);
 
-            PieceView currentPieceView = board.getCurrentPieceView();
-            Piece currentPiece = currentPieceView.getPiece();
+            Piece currentPiece = board.getCurrentPiece();
 
             if (board.canMovePiece(currentPiece, 0, 1)) {
                 currentPiece.moveDown();
             } else {
-                board.placePieceView(currentPieceView);
+                board.placePiece(currentPiece, currentPieceView.getSymbol());
 
                 int linesCleared = board.clearCompleteLines();
                 score += linesCleared * 100;
@@ -69,10 +78,7 @@ public class Tetris {
 
                 spawnNewPiece();
 
-                PieceView newPieceView = board.getCurrentPieceView();
-                Piece newPiece = newPieceView.getPiece();
-                
-                if (!board.canMovePiece(newPiece, 0, 0)) {
+                if (!board.canMovePiece(board.getCurrentPiece(), 0, 0)) {
                     gameRunning = false;
                     console.writeln("¡GAME OVER!");
                     console.writeln("Puntuación final: " + score);

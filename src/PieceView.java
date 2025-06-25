@@ -1,9 +1,7 @@
 class PieceView {
     private char symbol;
-    private Piece piece;
 
-    public PieceView(Piece piece, char symbol) {
-        this.piece = piece;
+    public PieceView(char symbol) {
         this.symbol = symbol;
     }
 
@@ -15,11 +13,7 @@ class PieceView {
         this.symbol = symbol;
     }
 
-    public Piece getPiece() {
-        return piece;
-    }
-
-    public void render(char[][] displayGrid) {
+    public void render(Piece piece, char[][] displayGrid) {
         boolean[][] shape = piece.getShape();
         Position pos = piece.getPosition();
 

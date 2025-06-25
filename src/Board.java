@@ -2,14 +2,12 @@ public class Board {
     private char[][] grid;
     private int width;
     private int height;
-    private PieceView currentPieceView;
-    private Console console;
+    private Piece currentPiece;
 
-    public Board(int width, int height, Console console) {
+    public Board(int width, int height) {
         this.width = width;
         this.height = height;
         this.grid = new char[height][width];
-        this.console = console;
         clearBoard();
     }
 
@@ -21,15 +19,26 @@ public class Board {
         }
     }
 
-    public void setCurrentPieceView(PieceView pieceView) {
-        this.currentPieceView = pieceView;
-        Piece piece = pieceView.getPiece();
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public char[][] getGrid() {
+        return grid;
+    }
+
+    public void setCurrentPiece(Piece piece) {
+        this.currentPiece = piece;
         piece.getPosition().setX(width / 2 - piece.getShape()[0].length / 2);
         piece.getPosition().setY(0);
     }
 
-    public PieceView getCurrentPieceView() {
-        return currentPieceView;
+    public Piece getCurrentPiece() {
+        return currentPiece;
     }
 
     public boolean canMovePiece(Piece piece, int deltaX, int deltaY) {
@@ -79,8 +88,7 @@ public class Board {
         return canRotate;
     }
 
-    public void placePieceView(PieceView pieceView) {
-        Piece piece = pieceView.getPiece();
+    public void placePiece(Piece piece, char symbol) {
         boolean[][] shape = piece.getShape();
         Position pos = piece.getPosition();
 
@@ -90,7 +98,7 @@ public class Board {
                     int x = pos.getX() + j;
                     int y = pos.getY() + i;
                     if (y >= 0 && y < height && x >= 0 && x < width) {
-                        grid[y][x] = pieceView.getSymbol();
+                        grid[y][x] = symbol;
                     }
                 }
             }
@@ -126,30 +134,5 @@ public class Board {
         }
 
         return linesCleared;
-    }
-
-    public void display() {
-        char[][] displayGrid = new char[height][width];
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                displayGrid[i][j] = grid[i][j];
-            }
-        }
-
-        if (currentPieceView != null) {
-            currentPieceView.render(displayGrid);
-        }
-
-        console.clearScreen();
-        console.writeln("<!" + "=".repeat(((width + 2) * 2) - 1) + "!>");
-        for (int i = 0; i < height; i++) {
-            console.write("<!  ");
-            for (int j = 0; j < width; j++) {
-                console.write(displayGrid[i][j] + " ");
-            }
-            console.writeln(" !>");
-        }
-        console.writeln("<!" + "=".repeat(((width + 2) * 2) - 1) + "!>");
-        console.writeln("\\/".repeat(width + 4));
     }
 }
