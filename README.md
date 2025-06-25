@@ -6,7 +6,7 @@ Un Tetris ASCII
 
 |![](/images/modelosUML/MdD.svg)
 |:-:
-|Modelo del dominio: [Código fuente](/modelosUML/MdD.puml)
+|Arquitectura: [Código fuente](/modelosUML/MdD.puml)
 
 </div>
 
