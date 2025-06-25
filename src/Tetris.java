@@ -23,6 +23,7 @@ public class Tetris {
         };
 //7bag system to be added!!!
         for (int bagCount=7;bagCount>0;bagCount--) {
+          
             Boolean[] usedPiece={false,false,false,false,false,false,false};
             int randomIndex = (int) (Math.random() * pieces.length);
             boolean isUsed=false;
