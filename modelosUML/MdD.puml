@@ -16,9 +16,8 @@ package "CONTROLADOR" {
 }
 
 package "UTILIDADES" {
-    class Console
     class PieceFactory
-    class Game
+    class Console
 }
 
 
@@ -26,8 +25,8 @@ Game --> Tetris : creates
 Tetris *-- Board : controls
 Tetris *-- BoardView : uses
 Tetris --> PieceView : manages current
-Tetris --> Console : uses
-Tetris --> PieceFactory : uses
+Tetris ---> Console : uses
+Tetris ---> PieceFactory : uses
 
 Board *-- Piece : manages current
 Piece *-- Position : contains
