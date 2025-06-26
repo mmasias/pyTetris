@@ -22,7 +22,7 @@ Las **decisiones tecnológicas** son el puente entre el **QUÉ** (análisis) y e
 
 ## Decisiones tecnológicas tomadas
 
-### Lenguaje de programación: Java
+### 1. Lenguaje de programación: Java
 
 **Concepto de análisis afectado:** Todos
 
