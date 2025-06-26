@@ -315,7 +315,41 @@ board.setCurrentPiece(pieces[randomIndex]);
 - **Solución:** `gameLoop()` define la estructura, métodos específicos los detalles
 - **Beneficio:** Flujo de control predecible
 
-### 5. Decisiones de algoritmos específicas
+### 5. Los "por qué no!"
+
+Se incluyen a continuación decisiones concientes de no implementación, junto con la justificación de por qué no.
+
+#### Patrón Observer para actualización de vistas
+
+- **Complejidad innecesaria:** Para un juego con un único observador (BoardView), Observer añade abstracción sin beneficio
+- **Flujo síncrono simple:** El game loop ya controla cuándo actualizar la vista
+- **Decisión:** Llamada directa a `boardView.display()` cuando es necesario
+
+#### Sistema de eventos
+
+- **Sobreingeniería:** Los comandos son simples (4, 6, 7, 9)
+- **Flujo predecible:** Entrada → Procesamiento → Actualización
+- **Decisión:** Switch simple en `processUserInput()`
+
+#### Herencia para tipos de piezas
+
+- **Sin comportamiento diferenciado:** Todas las piezas se mueven y rotan igual
+- **Solo difieren en datos:** La forma inicial
+- **Decisión:** Composición con factory (ver `[valeLaPenaLaHerencia.md](valeLaPenaLaHerencia.md)`)
+
+#### Threading para animación fluida
+
+- **Complejidad de sincronización:** Requiere manejo de concurrencia
+- **Objetivo educativo:** Mantener el código comprensible
+- **Decisión:** Game loop síncrono con entrada bloqueante
+
+#### Persistencia de puntuaciones
+
+- **Fuera del alcance:** No era requisito
+- **Complejidad adicional:** Manejo de archivos o base de datos
+- **Decisión:** Puntuación solo en memoria durante la sesión
+
+### 6. Decisiones de algoritmos específicas
 
 #### Detección de colisiones
 
@@ -338,7 +372,7 @@ board.setCurrentPiece(pieces[randomIndex]);
 - **Alternativa considerada:** Reconstruir grid completo
 - **Justificación:** Eficiencia, preserva estado
 
-### 6. Manejo de errores y casos límites
+### 7. Manejo de errores y casos límites
 
 #### Rotación en rordes
 
@@ -362,7 +396,18 @@ if (!board.canMovePiece(board.getCurrentPiece(), 0, 0)) {
 }
 ```
 
-### 7. Optimizaciones implementadas
+### 9. Flujo de interacción: Game Loop
+
+<div align=center>
+
+|![](/images/modelosUML/DiagramaSecuencia.svg)
+|:-:
+|*Flujo de control principal + interacción entre componentes + ciclo de vida de una pieza*
+
+</div>
+
+
+### 10. Optimizaciones implementadas
 
 #### Renderizado eficiente
 
@@ -385,15 +430,52 @@ if (!board.canMovePiece(board.getCurrentPiece(), 0, 0)) {
 
 |Decisión tecnológica|Implementación final|Archivos|
 |-|-|-|
-| Array 2D para tablero | `char[][] grid` en `Board` | `Board.java:10` |
-| Factory Method | `PieceFactory` con métodos estáticos | `PieceFactory.java:1-49` |
-| MVC | Separación en packages conceptuales | Todo el src/ |
-| Entrada síncrona | `console.readString()` en game loop | `Tetris.java:61` |
-| Rotación matricial | `rotateClockwise()` con transposición | `Piece.java:34-45` |
+|Array 2D para tablero|`char[][] grid` en `Board`|`Board.java:10`|
+|Factory Method|`PieceFactory` con métodos estáticos|`PieceFactory.java:1-49`|
+|MVC|Separación en packages conceptuales|Todo el src/|
+|Entrada síncrona|`console.readString()` en game loop|`Tetris.java:61`|
+|Rotación matricial|`rotateClockwise()` con transposición|`Piece.java:34-45`|
 
 </div>
 
 ## Validación del diseño
+
+### Cohesión y acoplamiento
+
+<div align=center>
+
+|Métrica|Valor|Evaluación|
+|-|:-:|-|
+|Clases con responsabilidad única |9/9|Excelente|
+|Dependencias por clase (promedio) |2.1|Bajo acoplamiento|
+|Métodos por clase (promedio) |6.7|Tamaño manejable|
+|Clases sin estado mutable compartido |8/9|Muy bien|
+
+</div>
+
+### Complejidad
+
+<div align=center>
+
+|Clase|Líneas|Método más largo|Complejidad ciclomática máx|
+|-|:-:|-|-|
+|Board|115|clearCompleteLines (26)|4 (clearCompleteLines)|
+|Piece|58|rotateClockwise (12)|2 (rotaciones)|
+|Tetris|84|gameLoop (35)|5 (gameLoop)|
+|BoardView|35|display (28)|2 (display)|
+
+</div>
+
+- Todos los métodos < 40 líneas
+- Complejidad ciclomática baja (< 10)
+
+### Principios SOLID
+
+- **S**ingle Responsibility: Cada clase tiene un propósito claro
+- **O**pen/Closed: PieceFactory permite añadir piezas sin modificar
+- **L**iskov Substitution: N/A (sin herencia)
+- **I**nterface Segregation: N/A (sin interfaces)
+- **D**ependency Inversion: Dependencias concretas (aceptable dada la naturaleza del proyecto)
 
 ### Criterios cumplidos
 
@@ -435,3 +517,38 @@ El resultado es un código que:
 - **Es mantenible y extensible** para futuros cambios
 
 **La cadena completa está cerrada:** Análisis → Decisiones → Diseño → Código ejecutable.
+
+### Decisiones acertadas
+
+|Separación MVC desde el inicio|Factory para piezas|Algoritmos junto a los datos para grid|
+|-|-|-|
+|Facilitó las pruebas manuales|Centralización exitosa|Eficientes y comprensibles|
+|Permitió cambiar la visualización sin tocar la lógica|Fácil añadir nuevos tipos|Evitan copias innecesarias|
+|Claridad conceptual para estudiantes|Garantiza consistencia pieza-vista|Buen ejemplo de manipulación de arrays|
+
+### Decisiones cuestionables (con justificación!!!)
+
+||Game loop síncrono|Comandos numéricos (4,6,7,9)|Sin preview de siguiente pieza|
+|-|-|-|-|
+|**Limitación:**|Una acción por "frame"|No intuitivo para usuarios nuevos|Experiencia de juego incompleta|
+|**Justificación:**|Simplicidad didáctica|Simplicidad de implementación|No estaba en los requisitos|
+|**Alternativa futura:**|Timer + Thread para caída automática|WASD o flechas con librería de terminal|Panel lateral con siguiente pieza|
+
+### A recordar, para futuros proyectos
+
+#### La simplicidad es una característica, no un defecto
+
+- Mejor empezar simple y refactorizar que sobre-diseñar
+- Código educativo != Código de producción
+
+#### Los patrones deben justificarse con necesidades reales
+
+- *¿Para qué herencia si no hay comportamiento polimórfico?*
+- *¿Para qué Observer si no hay múltiples observadores?*
+- *¿Para qué Strategy si no hay estrategias intercambiables?*
+
+#### La documentación del "por qué NO" es tan valiosa como el "por qué SÍ"
+
+- Demuestra consideración consciente
+- Educa sobre compromisos
+- Previene sobreingeniería futura
