@@ -13,6 +13,12 @@ Un Tetris ASCII
 <div align=center>
 
 |[Modelo del dominio](modeloDelDominio.md) | [Análisis](ProcesoAnalisis.md) | [Decisiones tecnológicas](DecisionesTecnologicas.md) | Diseño
+|-|-|-|-|
+</div>
+
+<div align=right>
+
+<sub>[*Motivación*](motivación.md)</sub>
 
 </div>
 
