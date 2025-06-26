@@ -21,26 +21,23 @@ public class Tetris {
                 PieceFactory.createSPiece(),
                 PieceFactory.createZPiece()
         };
-
-        Boolean fullBag=true;
-        while (fullBag) { 
-            boolean[] bagPieceUsed={false,false,false,false,false,false,false};
-            int randomIndex = (int) (Math.random() * pieces.length);
-            bagPieceUsed[randomIndex]=true;
-            board.setCurrentPiece(pieces[randomIndex]);
-
-                if(bagPieceUsed[randomIndex]){
-                    Boolean usedPiece=true;
-                    do {
-                        int newRandomIndex = (int) (Math.random() * pieces.length);
-                    }while (usedPiece);
-
-
-                }
-                    
-            board.setCurrentPiece(pieces[randomIndex]);
-            
-        }
+        
+    //me di cuenta que esto no funciona porque siempre que se llama a spawnNewPiece se baciaria el bag de nuevo, seguire trabajando en esto algun otro momento                        
+        // Boolean fullBag=true;
+        // while (fullBag) { 
+        //     boolean[] bagPieceUsed={false,false,false,false,false,false,false};
+        //     int randomIndex = (int) (Math.random() * pieces.length);
+        //     bagPieceUsed[randomIndex]=true;
+        //     board.setCurrentPiece(pieces[randomIndex]);
+        //     int newRandomIndex = (int) (Math.random() * pieces.length);
+        //         if(bagPieceUsed[newRandomIndex]){
+        //             Boolean usedPiece=true;
+        //             do {
+        //           }while (usedPiece);
+        //           }
+        
+        int randomIndex = (int) (Math.random() * pieces.length);
+        board.setCurrentPiece(pieces[randomIndex]);
     }
 
     private void processUserInput(String input) {
