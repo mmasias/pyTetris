@@ -22,21 +22,26 @@ public class Tetris {
                 PieceFactory.createZPiece()
         };
         
-    //me di cuenta que esto no funciona porque siempre que se llama a spawnNewPiece se baciaria el bag de nuevo, seguire trabajando en esto algun otro momento                        
-        // Boolean fullBag=true;
-        // while (fullBag) { 
-        //     boolean[] bagPieceUsed={false,false,false,false,false,false,false};
-        //     int randomIndex = (int) (Math.random() * pieces.length);
-        //     bagPieceUsed[randomIndex]=true;
-        //     board.setCurrentPiece(pieces[randomIndex]);
-        //     int newRandomIndex = (int) (Math.random() * pieces.length);
-        //         if(bagPieceUsed[newRandomIndex]){
-        //             Boolean usedPiece=true;
-        //             do {
-        //           }while (usedPiece);
-        //           }
-        
-        int randomIndex = (int) (Math.random() * pieces.length);
+    
+            boolean[] bagPieceUsed={false,false,false,false,false,false,false};
+            int randomIndex = (int) (Math.random() * pieces.length);
+            if(bagPieceUsed[randomIndex]=true){
+                boolean repeatedPiece=true;
+                while(repeatedPiece){
+                    int newRandom = (int) (Math.random() * pieces.length);
+                    if(newRandom!=randomIndex){
+                        repeatedPiece=false;
+                        randomIndex=newRandom;
+                    }
+                }
+            }
+            bagPieceUsed[randomIndex]=true;
+            for(int i=0; i<bagPieceUsed.length;i++){
+                if(bagPieceUsed[i]=true){
+                    
+                }
+                System.err.println("piece n."+i);
+            }
         board.setCurrentPiece(pieces[randomIndex]);
     }
 
@@ -53,6 +58,7 @@ public class Tetris {
                     if (board.canMovePiece(board.getCurrentPiece(), 1, 0))
                         board.getCurrentPiece().moveRight();
                 }
+
                 case '7' -> board.canRotatePiece(board.getCurrentPiece(), false);
                 case '9' -> board.canRotatePiece(board.getCurrentPiece(), true);
             }
