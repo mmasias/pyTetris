@@ -73,12 +73,37 @@ public class Tetris {
                 board.placePiece(board.getCurrentPiece());
 
                 int linesCleared = board.clearCompleteLines();
-                score += linesCleared * 100;
+                if (linesCleared==4){
+                 score+=800;  
+                }
+                if (linesCleared==3){
+                 score+=500;  
+                }
+                if (linesCleared==2){
+                 score+=300;  
+                }
+                if (linesCleared==1){
+                 score+=100;  
+                }
+                
 
-                if (linesCleared > 0) {
-                    console.writeln("¡" + linesCleared + " línea(s) eliminada(s)!");
+                if (linesCleared==1) {
+                    console.writeln("¡" + linesCleared + " línea eliminada! SINGLE");
                     console.readString("Presiona Enter para continuar...");
                 }
+                if (linesCleared==2) {
+                    console.writeln("¡" + linesCleared + " líneas eliminadas! DOUBLE ");
+                    console.readString("Presiona Enter para continuar...");
+                }
+                if (linesCleared==3) {
+                    console.writeln("¡" + linesCleared + " líneas eliminadas! TRIPLE");
+                    console.readString("Presiona Enter para continuar...");
+                }
+                if (linesCleared==4) {
+                    console.writeln("¡" + linesCleared + " líneas eliminadas! TETRIS!");
+                    console.readString("Presiona Enter para continuar...");
+                }
+
 
                 spawnNewPiece();
 
