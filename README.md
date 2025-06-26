@@ -12,7 +12,7 @@ Un Tetris ASCII
 
 <div align=center>
 
-|[Modelo del dominio](modeloDelDominio.md)|[Análisis](ProcesoAnalisis.md)|Diseño
+|[Modelo del dominio](modeloDelDominio.md) | [Análisis](ProcesoAnalisis.md) | [Decisiones tecnológicas](DecisionesTecnologicas.md) | Diseño
 
 </div>
 
