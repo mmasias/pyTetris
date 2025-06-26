@@ -3,13 +3,11 @@ public class Board {
     private int width;
     private int height;
     private Piece currentPiece;
-    private Console console;
 
-    public Board(int width, int height, Console console) {
+    public Board(int width, int height) {
         this.width = width;
         this.height = height;
         this.grid = new char[height][width];
-        this.console = console;
         clearBoard();
     }
 
@@ -19,6 +17,18 @@ public class Board {
                 grid[i][j] = '.';
             }
         }
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public char[][] getGrid() {
+        return grid;
     }
 
     public void setCurrentPiece(Piece piece) {
@@ -55,7 +65,6 @@ public class Board {
     }
 
     public boolean canRotatePiece(Piece piece, boolean clockwise) {
-
         if (clockwise) {
             piece.rotateClockwise();
         } else {
@@ -79,7 +88,7 @@ public class Board {
         return canRotate;
     }
 
-    public void placePiece(Piece piece) {
+    public void placePiece(Piece piece, char symbol) {
         boolean[][] shape = piece.getShape();
         Position pos = piece.getPosition();
 
@@ -89,7 +98,7 @@ public class Board {
                     int x = pos.getX() + j;
                     int y = pos.getY() + i;
                     if (y >= 0 && y < height && x >= 0 && x < width) {
-                        grid[y][x] = piece.getSymbol();
+                        grid[y][x] = symbol;
                     }
                 }
             }
@@ -125,43 +134,5 @@ public class Board {
         }
 
         return linesCleared;
-    }
-
-    public void display() {
-        char[][] displayGrid = new char[height][width];
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                displayGrid[i][j] = grid[i][j];
-            }
-        }
-
-        if (currentPiece != null) {
-            boolean[][] shape = currentPiece.getShape();
-            Position pos = currentPiece.getPosition();
-
-            for (int i = 0; i < shape.length; i++) {
-                for (int j = 0; j < shape[i].length; j++) {
-                    if (shape[i][j]) {
-                        int x = pos.getX() + j;
-                        int y = pos.getY() + i;
-                        if (y >= 0 && y < height && x >= 0 && x < width) {
-                            displayGrid[y][x] = currentPiece.getSymbol();
-                        }
-                    }
-                }
-            }
-        }
-
-        console.clearScreen();
-        console.writeln("<!" + "=".repeat(((width + 2) * 2) - 1) + "!>");
-        for (int i = 0; i < height; i++) {
-            console.write("<!  ");
-            for (int j = 0; j < width; j++) {
-                console.write(displayGrid[i][j] + " ");
-            }
-            console.writeln(" !>");
-        }
-        console.writeln("<!" + "=".repeat(((width + 2) * 2) - 1) + "!>");
-        console.writeln("\\/".repeat(width + 4));
     }
 }

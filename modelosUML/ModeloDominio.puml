@@ -1,0 +1,18 @@
+@startuml
+
+Juego *-- Tablero : "se juega en"
+Juego o-- Pieza : "contiene piezas activas"
+Juego *-- Turno : "se desarrolla en turnos"
+
+Tablero *-- Celda : "está formado por"
+Tablero *-- Linea : "se organiza en"
+
+Pieza --> TipoPieza : "es de tipo"
+Pieza --> Celda : "ocupa"
+
+Turno --> Pieza : "involucra"
+Turno o-- Movimiento : "permite"
+
+Linea *-- Celda : "contiene"
+
+@enduml

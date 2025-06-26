@@ -4,39 +4,24 @@ Un Tetris ASCII
 
 <div align=center>
 
-|![](/images/modelosUML/MdD.svg)
-|:-:
-|Modelo del dominio: [Código fuente](/modelosUML/MdD.puml)
+![](/images/tetris.png)
 
 </div>
 
-```console
-<!=======================!>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . . . . . . . . .  !>
-<!  . . I . . . . . . T  !>
-<!  . . I . . . . . T T  !>
-<!  O O I . . . . . T T  !>
-<!  O O I I I I I T T T  !>
-<!=======================!>
-\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-Score: 0
+## 🚬's
 
-Comando (4=izq, 6=der, 7=rotar↺, 9=rotar↻): 
-¡1 línea(s) eliminada(s)!
-Presiona Enter para continuar...
-```
+<div align=center>
+
+|[Modelo del dominio](modeloDelDominio.md) | [Análisis](ProcesoAnalisis.md) | [Decisiones tecnológicas](DecisionesTecnologicas.md) | Diseño
+|-|-|-|-|
+</div>
+
+<div align=right>
+
+<sub>[*Motivación*](motivación.md)</sub>
+
+</div>
+
+## 2Think
+
+- [¿Vale la pena la herencia?](valeLaPenaLaHerencia.md)

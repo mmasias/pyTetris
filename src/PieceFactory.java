@@ -3,7 +3,7 @@ public class PieceFactory {
         boolean[][] shape = {
                 { true, true, true, true }
         };
-        return new Piece(shape, 'I');
+        return new Piece(shape);
     }
 
     public static Piece createOPiece() {
@@ -11,7 +11,7 @@ public class PieceFactory {
                 { true, true },
                 { true, true }
         };
-        return new Piece(shape, 'O');
+        return new Piece(shape);
     }
 
     public static Piece createTPiece() {
@@ -19,7 +19,7 @@ public class PieceFactory {
                 { false, true, false },
                 { true, true, true }
         };
-        return new Piece(shape, 'T');
+        return new Piece(shape);
     }
 
     public static Piece createLPiece() {
@@ -28,6 +28,22 @@ public class PieceFactory {
                 { true, false },
                 { true, true }
         };
-        return new Piece(shape, 'L');
+        return new Piece(shape);
+    }
+
+    public static PieceView createIPieceView() {
+        return new PieceView('I');
+    }
+
+    public static PieceView createOPieceView() {
+        return new PieceView('O');
+    }
+
+    public static PieceView createTPieceView() {
+        return new PieceView('T');
+    }
+
+    public static PieceView createLPieceView() {
+        return new PieceView('L');
     }
 }
