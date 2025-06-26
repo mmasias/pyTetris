@@ -14,7 +14,7 @@
 
 |||
 |-|-|
-Juego|Concepto central del dominio. Representa una partida de Tetris con sus reglas y estado.
+|Juego|Concepto central del dominio. Representa una partida de Tetris con sus reglas y estado.
 |Tablero|Área conceptual donde caen y se acumulan las piezas del juego.
 |Pieza|Elementos geométricos que caen y que el jugador puede manipular.|
 |TipoPieza|Clasificación de las piezas según su forma característica(I, O, T, L, S, Z, J).

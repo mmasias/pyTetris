@@ -10,8 +10,11 @@ Un Tetris ASCII
 
 ## 🚬's
 
-[Modelo del dominio](modeloDelDominio.md) / Análisis / Diseño
+<div align=center>
 
+|[Modelo del dominio](modeloDelDominio.md)|[Análisis](ProcesoAnalisis.md)|Diseño
+
+</div>
 
 ## 2Think
 
