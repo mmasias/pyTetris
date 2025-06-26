@@ -21,19 +21,25 @@ public class Tetris {
                 PieceFactory.createSPiece(),
                 PieceFactory.createZPiece()
         };
-//7bag system to be added!!!
-        for (int bagCount=7;bagCount>0;bagCount--) {
-          
-            Boolean[] usedPiece={false,false,false,false,false,false,false};
+
+        Boolean fullBag=true;
+        while (fullBag) { 
+            boolean[] bagPieceUsed={false,false,false,false,false,false,false};
             int randomIndex = (int) (Math.random() * pieces.length);
-            boolean isUsed=false;
-            do{
-                if(usedPiece[randomIndex]=false){
-                    board.setCurrentPiece(pieces[randomIndex]);
-                    usedPiece[randomIndex]=true;
-                }else{
-            }        
-            }while (isUsed);
+            bagPieceUsed[randomIndex]=true;
+            board.setCurrentPiece(pieces[randomIndex]);
+
+                if(bagPieceUsed[randomIndex]){
+                    Boolean usedPiece=true;
+                    do {
+                        int newRandomIndex = (int) (Math.random() * pieces.length);
+                    }while (usedPiece);
+
+
+                }
+                    
+            board.setCurrentPiece(pieces[randomIndex]);
+            
         }
     }
 
