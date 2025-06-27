@@ -1,3 +1,9 @@
+<div align=right>
+
+<sub>*El desarrollo de software no es un arte misterioso, sino un proceso **sistemático**<br>donde cada decisión tiene fundamento y trazabilidad<br> desde los conceptos del dominio hasta el código ejecutable.*</sub>
+
+</div>
+
 # pyTetris
 
 Un Tetris ASCII
