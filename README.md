@@ -12,9 +12,9 @@ Un Tetris ASCII
 
 <div align=center>
 
-||||||||
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|[Modelo del dominio](/docs/modeloDelDominio.md)|>>|[Análisis](/docs/ProcesoAnalisis.md)|>>|[Decisiones tecnológicas](/docs/DecisionesTecnologicas)|>>|[Diseño](/docs/ProcesoDiseño.md)
+|Observar||Conceptualizar||Decidir||Construir||Ejecutar|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|[Modelo del dominio](/docs/modeloDelDominio.md)|>>|[Análisis](/docs/ProcesoAnalisis.md)|>>|[Decisiones tecnológicas](/docs/DecisionesTecnologicas.md)|>>|[Diseño](/docs/ProcesoDiseño.md)|>>|[Código](/src/)
 
 </div>
 
