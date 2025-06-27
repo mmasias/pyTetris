@@ -1,3 +1,11 @@
+<div align=center>
+
+||||||||
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|[Modelo del dominio](/docs/modeloDelDominio.md)|>>|[Análisis](/docs/ProcesoAnalisis.md)|>>|[**Decisiones tecnológicas**](/docs/DecisionesTecnologicas)|>>|[Diseño](/docs/ProcesoDiseño.md)
+
+</div>
+
 # Decisiones tecnológicas: del análisis al diseño
 
 ## ¿Qué son las decisiones tecnológicas?

@@ -1,3 +1,11 @@
+<div align=center>
+
+||||||||
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|[Modelo del dominio](/docs/modeloDelDominio.md)|>>|[**Análisis**](/docs/ProcesoAnalisis.md)|>>|[Decisiones tecnológicas](/docs/DecisionesTecnologicas)|>>|[Diseño](/docs/ProcesoDiseño.md)
+
+</div>
+
 # Proceso de análisis
 
 El **análisis** es la fase donde identificamos y modelamos **QUÉ** debe hacer el sistema, sin preocuparnos por **CÓMO** lo implementaremos. Nos enfocamos en entender el problema del dominio y sus conceptos fundamentales.
@@ -6,7 +14,7 @@ El **análisis** es la fase donde identificamos y modelamos **QUÉ** debe hacer 
 
 ### 1. Punto de partida: modelo del dominio
 
-El **análisis** parte del [modelo del dominio](modelosUML/ModeloDominio.puml) previamente elaborado, que identifica los conceptos puros del mundo real:
+El **análisis** parte del [modelo del dominio](../modelosUML/ModeloDominio.puml) previamente elaborado, que identifica los conceptos puros del mundo real:
 
 - `Juego`, `Tablero`, `Pieza`, `TipoPieza`
 - `Celda`, `Linea`, `Movimiento`, `Turno`
@@ -103,7 +111,7 @@ El **análisis** parte del [modelo del dominio](modelosUML/ModeloDominio.puml) p
 
 <div align=center>
 
-|![](/images/modelosUML/DiagramaAnalisis.svg)
+|![](../images/modelosUML/DiagramaAnalisis.svg)
 |-
 
 </div>

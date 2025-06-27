@@ -1,3 +1,11 @@
+<div align=center>
+
+||||||||
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|[Modelo del dominio](/docs/modeloDelDominio.md)|>>|[Análisis](/docs/ProcesoAnalisis.md)|>>|[Decisiones tecnológicas](/docs/DecisionesTecnologicas)|>>|[**Diseño**](/docs/ProcesoDiseño.md)
+
+</div>
+
 # Proceso de diseño
 
 El **diseño** es la fase donde materializamos las decisiones tecnológicas en **código ejecutable**. Aquí definimos:
@@ -27,8 +35,8 @@ El **diseño** es la fase donde materializamos las decisiones tecnológicas en *
 
 |Diagrama de clases (simple)
 |:-:
-|![](/images/modelosUML/DiagramaDiseñoMIN.svg)
-|[Diagrama de clases completo](/images/modelosUML/DiagramaDiseño.svg)
+|![](../images/modelosUML/DiagramaDiseñoMIN.svg)
+|[Diagrama de clases completo](../images/modelosUML/DiagramaDiseño.svg)
 
 </div>
 
@@ -42,10 +50,10 @@ El **diseño** es la fase donde materializamos las decisiones tecnológicas en *
 |Independiente de la interfaz|Traduce datos del modelo a visualización|Maneja la lógica de control|
 |Representa el estado del juego|Gestiona I/O con el usuario|Procesa entrada del usuario|
 ||||
-|[Board.java](/src/Board.java)|[BoardView.java](/src/BoardView.java)|[Tetris.java](/src/Tetris.java)|
-|[Piece.java](/src/Piece.java)|[PieceView.java](/src/PieceView.java)|[Game.java](/src/Game.java)|
-|[Position.java](/src/Position.java)|[Console.java](/src/Console.java)||
-|[PieceFactory.java](/src/PieceFactory.java)|||
+|[Board.java](../src/Board.java)|[BoardView.java](../src/BoardView.java)|[Tetris.java](../src/Tetris.java)|
+|[Piece.java](../src/Piece.java)|[PieceView.java](../src/PieceView.java)|[Game.java](../src/Game.java)|
+|[Position.java](../src/Position.java)|[Console.java](../src/Console.java)||
+|[PieceFactory.java](../src/PieceFactory.java)|||
 
 </div>
 
@@ -400,7 +408,7 @@ if (!board.canMovePiece(board.getCurrentPiece(), 0, 0)) {
 
 <div align=center>
 
-|![](/images/modelosUML/DiagramaSecuencia.svg)
+|![](../images/modelosUML/DiagramaSecuencia.svg)
 |:-:
 |*Flujo de control principal + interacción entre componentes + ciclo de vida de una pieza*
 

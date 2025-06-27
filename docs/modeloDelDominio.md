@@ -1,3 +1,11 @@
+<div align=center>
+
+||||||||
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|[**Modelo del dominio**](/docs/modeloDelDominio.md)|>>|[Análisis](/docs/ProcesoAnalisis.md)|>>|[Decisiones tecnológicas](/docs/DecisionesTecnologicas)|>>|[Diseño](/docs/ProcesoDiseño.md)
+
+</div>
+
 # Modelo del dominio
 
 El **modelo del dominio** es la fase donde capturamos los **conceptos puros del mundo real**, sin contaminación tecnológica. Aquí identificamos entidades, relaciones, vocabulario y reglas.
@@ -150,7 +158,8 @@ El **modelo del dominio** es la fase donde capturamos los **conceptos puros del 
 
 <div align=center>
 
-![](/images/modelosUML/ModeloDominio.svg)
+|![](../images/modelosUML/ModeloDominio.svg)
+|-
 
 </div>
 
