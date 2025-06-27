@@ -512,9 +512,9 @@ if (!board.canMovePiece(board.getCurrentPiece(), 0, 0)) {
 
 El proceso de diseño ha transformado exitosamente:
 
-1. **Conceptos abstractos** (análisis) → **Clases concretas** (código)
-2. **Decisiones tecnológicas** → **Algoritmos específicos**
-3. **Relaciones conceptuales** → **Referencias y métodos**
+1. **Conceptos abstractos** ([análisis](ProcesoAnalisis.md)) → **Clases concretas** ([código](/src/))
+2. **[Decisiones tecnológicas](DecisionesTecnologicas.md)** → **Algoritmos específicos**
+3. **[Relaciones conceptuales](modeloDelDominio.md)** → **Referencias y métodos**
 4. **Responsabilidades** → **Métodos implementados**
 
 El resultado es un código que:

@@ -46,15 +46,15 @@ El **análisis** parte del [modelo del dominio](../modelosUML/ModeloDominio.puml
 
 |Concepto del dominio|Decisión en análisis|Justificación|
 |-|-|-|
-|`Juego`|✅ Se mantiene como clase|Concepto central que coordina todo|
-|`Tablero`|✅ Se mantiene como clase|Área donde ocurre la acción|
-|`Pieza`|✅ Se mantiene como clase|Elementos principales que manipula el jugador|
-|`TipoPieza`|✅ Se mantiene como clase|Diferentes formas (I, O, T, L)|
-|`Posicion`|✅ Se extrae como clase|Ubicación de las piezas (extraída de Pieza)|
-|`Celda`|❌ Se absorbe en Tablero|Implementación interna del tablero|
-|`Linea`|❌ Se convierte en operación|`eliminarLineasCompletas()` en Tablero|
-|`Movimiento`|❌ Se convierte en operaciones|`mover()`, `rotar()` en Pieza|
-|`Turno`|❌ Se absorbe en flujo de control|Game loop en la clase principal|
+|`Juego`|Se mantiene como clase|Concepto central que coordina todo|
+|`Tablero`|Se mantiene como clase|Área donde ocurre la acción|
+|`Pieza`|Se mantiene como clase|Elementos principales que manipula el jugador|
+|`TipoPieza`|Se mantiene como clase|Diferentes formas (I, O, T, L)|
+|`Posicion`|Se extrae como clase|Ubicación de las piezas (extraída de Pieza)|
+|`Celda`|Se absorbe en Tablero|Implementación interna del tablero|
+|`Linea`|Se convierte en operación|`eliminarLineasCompletas()` en Tablero|
+|`Movimiento`|Se convierte en operaciones|`mover()`, `rotar()` en Pieza|
+|`Turno`|Se absorbe en flujo de control|Game loop en la clase principal|
 
 </div>
 
@@ -206,7 +206,7 @@ El **análisis** parte del [modelo del dominio](../modelosUML/ModeloDominio.puml
 El diagrama de análisis resultante captura la **esencia conceptual** del problema Tetris de manera que:
 
 1. **Un experto del dominio** (jugador de Tetris) puede validarlo
-2. **Un desarrollador** puede usarlo como base para el diseño
+2. **Un desarrollador** puede usarlo como base para el [diseño](ProcesoDiseño.md)
 3. **Es independiente de la tecnología** - podría implementarse en Java, Python, web, móvil, etc.
 4. **Se enfoca en el QUÉ** sin contaminar con detalles del CÓMO
 

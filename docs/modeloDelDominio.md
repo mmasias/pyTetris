@@ -82,16 +82,16 @@ El **modelo del dominio** es la fase donde capturamos los **conceptos puros del 
 
 |Concepto|Verbos asociados|¿Es entidad del dominio?|
 |-|-|:-:|
-|Juego|Iniciar, terminar, pausar, mantener puntuación|✅|
-|Tablero|Contener piezas, validar posiciones, eliminar líneas|✅|
-|Pieza|Caer, moverse, rotar, colocarse|✅|
-|Línea|Completarse, eliminarse, contar puntos|✅|
-|Celda|Estar ocupada/vacía|✅|
-|Movimiento|Ejecutarse, validarse|✅|
-|Turno|Comenzar, finalizar|✅|
-|Puntuación|Incrementarse, mostrarse|❓|
-|Nivel|Aumentar, determinar velocidad|❓|
-|Jugador|Controlar, decidir|❓|
+|Juego|Iniciar, terminar, pausar, mantener puntuación|Sí|
+|Tablero|Contener piezas, validar posiciones, eliminar líneas|Sí|
+|Pieza|Caer, moverse, rotar, colocarse|Sí|
+|Línea|Completarse, eliminarse, contar puntos|Sí|
+|Celda|Estar ocupada/vacía|Sí|
+|Movimiento|Ejecutarse, validarse|Sí|
+|Turno|Comenzar, finalizar|Sí|
+|Puntuación|Incrementarse, mostrarse|Hay dudas|
+|Nivel|Aumentar, determinar velocidad|Hay dudas|
+|Jugador|Controlar, decidir|Hay dudas|
 
 </div>
 
@@ -282,8 +282,8 @@ El modelo del dominio resultante captura la **esencia del Tetris** sin contamina
 
 Este modelo del dominio sirve como **contrato conceptual** para el resto del desarrollo:
 
-1. **Para el análisis:** ¿Qué conceptos se convierten en clases?
-2. **Para el diseño:** ¿Cómo se implementan estas relaciones?
+1. **Para el [análisis](ProcesoAnalisis.md):** ¿Qué conceptos se convierten en clases?
+2. **Para el [diseño](ProcesoDiseño.md):** ¿Cómo se implementan estas relaciones?
 3. **Para la validación:** ¿El código final respeta estos conceptos?
 
 El siguiente paso es transformar estos conceptos puros del dominio en elementos de software durante la fase de análisis, manteniendo la trazabilidad desde el vocabulario del jugador hasta el código ejecutable.
