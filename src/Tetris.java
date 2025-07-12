@@ -24,17 +24,13 @@ public class Tetris {
         
             boolean[] bagPieceUsed={false,false,false,false,false,false,false};
             int randomIndex = (int) (Math.random() * pieces.length);
-            if(bagPieceUsed[randomIndex]=true){
-                boolean repeatedPiece=true;
-                while(repeatedPiece){
+            while(bagPieceUsed[randomIndex]=true){
                     int newRandom = (int) (Math.random() * pieces.length);
                     if(newRandom!=randomIndex){
-                        repeatedPiece=false;
                         randomIndex=newRandom;
                     }
                 }
-            }
-            bagPieceUsed[randomIndex]=true;
+        bagPieceUsed[randomIndex]=true;
             for(int i=0,j=0; i<bagPieceUsed.length;i++){
                 if(bagPieceUsed[i]=true){
                     j++;
@@ -46,8 +42,8 @@ public class Tetris {
                 for(int k=0; k<bagPieceUsed.length;k++){
                     bagPieceUsed[k]=false;
                 }    
+                }
             }
-        }
         board.setCurrentPiece(pieces[randomIndex]);
     }
 
