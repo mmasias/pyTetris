@@ -22,28 +22,8 @@ public class Tetris {
                 PieceFactory.createZPiece()
         };
         
-            boolean[] bagPieceUsed={false,false,false,false,false,false,false};
             int randomIndex = (int) (Math.random() * pieces.length);
-            while(bagPieceUsed[randomIndex]=true){
-                    int newRandom = (int) (Math.random() * pieces.length);
-                    if(newRandom!=randomIndex){
-                        randomIndex=newRandom;
-                    }
-                }
-        bagPieceUsed[randomIndex]=true;
-            for(int i=0,j=0; i<bagPieceUsed.length;i++){
-                if(bagPieceUsed[i]=true){
-                    j++;
-                    System.out.println("Piece Count:"+j);
-                }
-                System.out.println("piece n."+i);
-            if(j==bagPieceUsed.length){
-                System.out.println("all used, new bag");
-                for(int k=0; k<bagPieceUsed.length;k++){
-                    bagPieceUsed[k]=false;
-                }    
-                }
-            }
+           
         board.setCurrentPiece(pieces[randomIndex]);
     }
 
