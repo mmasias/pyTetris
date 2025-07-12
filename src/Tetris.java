@@ -24,12 +24,14 @@ public class Tetris {
         
             boolean[] bagPieceUsed={false,false,false,false,false,false,false};
             int randomIndex = (int) (Math.random() * pieces.length);
-            while(bagPieceUsed[randomIndex]=true){
+            if(bagPieceUsed[randomIndex]=true){
+                //if should be a while but something is wrong
                     int newRandom = (int) (Math.random() * pieces.length);
                     if(newRandom!=randomIndex){
                         randomIndex=newRandom;
                     }
                 }
+        board.setCurrentPiece(pieces[randomIndex]);
         bagPieceUsed[randomIndex]=true;
             for(int i=0,j=0; i<bagPieceUsed.length;i++){
                 if(bagPieceUsed[i]=true){
@@ -44,7 +46,6 @@ public class Tetris {
                 }    
                 }
             }
-        board.setCurrentPiece(pieces[randomIndex]);
     }
 
     private void processUserInput(String input) {
