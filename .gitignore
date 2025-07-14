@@ -22,3 +22,16 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# .NET build artifacts
+PyTetris.NET/bin/
+PyTetris.NET/obj/
+PyTetris.NET/**/*.dll
+PyTetris.NET/**/*.exe
+PyTetris.NET/**/*.pdb
+PyTetris.NET/**/*.cache
+PyTetris.NET/**/*.props
+PyTetris.NET/**/*.targets
+PyTetris.NET/**/project.lock.json
+PyTetris.NET/**/project.fragment.lock.json
+PyTetris.NET/**/artifacts/
