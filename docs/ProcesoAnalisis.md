@@ -6,6 +6,43 @@
 
 </div>
 
+# Actores y Casos de Uso
+
+## Actores identificados
+
+- **Jugador**: Persona que interactúa con el juego, controla las piezas y toma decisiones.
+- **(Opcional futuro) Administrador**: Podría configurar parámetros, ver estadísticas, etc.
+- **(Opcional futuro) Observador**: Visualiza partidas, pero no interactúa.
+
+> **Nota:** Un actor es siempre una entidad externa al sistema que interactúa con él. El propio software o sistema NO es un actor, sino el sujeto de los casos de uso.
+
+## Casos de uso principales
+
+### Básicos (Tetris clásico)
+- Iniciar partida
+- Mover pieza (izquierda/derecha)
+- Rotar pieza
+- Acelerar caída de pieza
+- Pausar/reanudar partida
+- Finalizar partida
+- Ver puntuación
+- Limpiar línea
+- Mostrar siguiente pieza (si se implementa)
+
+### Casos de uso extendidos (para futuras versiones)
+- Cambiar nivel de dificultad
+- Guardar/cargar partida
+- Consultar estadísticas
+- Configurar controles
+- Jugar en modo multijugador
+- Ver ranking de puntuaciones
+- Activar/desactivar sonido
+- Personalizar apariencia
+- Usar pieza en "hold" (reserva)
+- Ver repetición de partida
+
+---
+
 # Proceso de análisis
 
 El **análisis** es la fase donde identificamos y modelamos **QUÉ** debe hacer el sistema, sin preocuparnos por **CÓMO** lo implementaremos. Nos enfocamos en entender el problema del dominio y sus conceptos fundamentales.

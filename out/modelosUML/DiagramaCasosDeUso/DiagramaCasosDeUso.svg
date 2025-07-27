@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="698px" preserveAspectRatio="none" style="width:359px;height:698px;" version="1.1" viewBox="0 0 359 698" width="359px" zoomAndPan="magnify"><defs><filter height="300%" id="fcvuzlw6w4zdr" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[7c784423336b160cf159677ae4de790d]
+cluster pyTetris--><rect fill="#FFFFFF" filter="url(#fcvuzlw6w4zdr)" height="679" style="stroke:#000000;stroke-width:1.5;" width="244" x="103" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="56" x="197" y="23.9659">pyTetris</text><ellipse cx="225.0926" cy="63.0185" fill="#FEFECE" filter="url(#fcvuzlw6w4zdr)" rx="78.0926" ry="18.0185" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="173.0926" y="67.7515">iniciarPartida()</text><ellipse cx="225.2471" cy="133.1494" fill="#FEFECE" filter="url(#fcvuzlw6w4zdr)" rx="73.7471" ry="17.1494" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="179.7471" y="137.8824">moverPieza()</text><ellipse cx="225.1639" cy="202.0114" fill="#FEFECE" filter="url(#fcvuzlw6w4zdr)" rx="67.6639" ry="17.0114" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="184.1639" y="206.7444">rotarPieza()</text><ellipse cx="224.8079" cy="274.8616" fill="#FEFECE" filter="url(#fcvuzlw6w4zdr)" rx="92.3079" ry="20.8616" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="153.8079" y="279.5945">acelerarCaidaPieza()</text><ellipse cx="224.9133" cy="355.0827" fill="#FEFECE" filter="url(#fcvuzlw6w4zdr)" rx="105.9133" ry="23.5827" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="169" x="137.4133" y="359.8156">pausarReanudarPartida()</text><ellipse cx="225.2318" cy="432.9464" fill="#FEFECE" filter="url(#fcvuzlw6w4zdr)" rx="82.7318" ry="18.9464" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="166.7318" y="437.6793">finalizarPartida()</text><ellipse cx="225.0574" cy="506.0115" fill="#FEFECE" filter="url(#fcvuzlw6w4zdr)" rx="80.5574" ry="18.5115" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="169.5574" y="510.7445">verPuntuacion()</text><ellipse cx="225.0473" cy="577.1095" fill="#FEFECE" filter="url(#fcvuzlw6w4zdr)" rx="76.0473" ry="17.6095" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="176.0473" y="581.8424">limpiarLinea()</text><ellipse cx="225.1621" cy="650.2324" fill="#FEFECE" filter="url(#fcvuzlw6w4zdr)" rx="89.1621" ry="20.2324" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="158.1621" y="654.9654">verSiguientePieza()</text><!--MD5=[c4c0163d469f071e925f61e933f41f98]
+entity Jugador--><ellipse cx="32.5" cy="322.5" fill="#FEFECE" filter="url(#fcvuzlw6w4zdr)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M32.5,330.5 L32.5,357.5 M19.5,338.5 L45.5,338.5 M32.5,357.5 L19.5,372.5 M32.5,357.5 L45.5,372.5 " fill="none" filter="url(#fcvuzlw6w4zdr)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="6" y="392.9659">Jugador</text><!--MD5=[5ea75f6ae584899d8f26ef54eb1a9bbe]
+link Jugador to iniciarPartida--><path d="M38.35,312.9 C46.64,248.13 65.57,128.33 95,98 C108.52,84.07 126.97,75.51 145.69,70.29 " fill="none" id="Jugador-to-iniciarPartida" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="150.98,68.91,141.2637,67.2997,146.1404,70.1663,143.2738,75.043,150.98,68.91" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[49e9795e6d38a793d87fbe49aaa06b6f]
+link Jugador to moverPieza--><path d="M35.96,312.62 C40.74,269.92 54.65,205.05 95,167 C109.99,152.86 130.14,144.45 150.05,139.48 " fill="none" id="Jugador-to-moverPieza" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="155.11,138.29,145.4343,136.4514,150.2422,139.432,147.2615,144.2399,155.11,138.29" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e1a28dc5011047641234c53b8048e55a]
+link Jugador to rotarPieza--><path d="M45.52,312.96 C54.98,287.18 70.69,255.49 95,236 C112.4,222.05 134.96,213.79 156.33,208.9 " fill="none" id="Jugador-to-rotarPieza" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="161.45,207.79,151.8076,205.7838,156.5631,208.8474,153.4995,213.6029,161.45,207.79" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[5358499e45b2c335961707eabc6ebb95]
+link Jugador to acelerarCaidaPieza--><path d="M59.13,335.45 C69.8,327.98 82.58,319.86 95,314 C114.02,305.03 135.59,297.55 155.57,291.62 " fill="none" id="Jugador-to-acelerarCaidaPieza" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="160.61,290.14,150.85,288.82,155.81,291.54,153.09,296.5,160.61,290.14" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9090dab68deca17f859042945446df05]
+link Jugador to pausarReanudarPartida--><path d="M59.19,355 C73.8,355 93.2,355 113.55,355 " fill="none" id="Jugador-to-pausarReanudarPartida" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="118.75,355,109.75,351,113.75,355,109.75,359,118.75,355" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[110f16c3c824c8fef82046c34289091d]
+link Jugador to finalizarPartida--><path d="M59.09,374.64 C69.75,382.12 82.54,390.23 95,396 C115.26,405.38 138.42,412.92 159.48,418.69 " fill="none" id="Jugador-to-finalizarPartida" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="164.5,420.04,156.8494,413.8378,159.6719,418.7401,154.7696,421.5627,164.5,420.04" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d9f65590f57c0912ca398cbff256c15f]
+link Jugador to verPuntuacion--><path d="M46.87,397.06 C56.6,421.33 72.14,450.6 95,469 C110.73,481.66 130.59,489.99 149.98,495.47 " fill="none" id="Jugador-to-verPuntuacion" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="154.9,496.8,147.2494,490.5978,150.0719,495.5001,145.1696,498.3227,154.9,496.8" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1f58aef55305541531b2aefbd3167130]
+link Jugador to limpiarLinea--><path d="M36.08,397.1 C40.96,439.53 54.96,504.02 95,542 C109.67,555.91 129.29,564.41 148.8,569.57 " fill="none" id="Jugador-to-limpiarLinea" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="153.75,570.81,145.9889,564.7466,148.8993,569.5973,144.0486,572.5077,153.75,570.81" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1f92c1492b4aa02b95034cef79d41ec4]
+link Jugador to verSiguientePieza--><path d="M38.43,397.03 C46.83,461.69 65.89,581.35 95,612 C107.34,625 123.89,633.62 141,639.32 " fill="none" id="Jugador-to-verSiguientePieza" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="145.84,640.85,138.4539,634.335,141.0701,639.3505,136.0547,641.9668,145.84,640.85" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[83949d1c00b1481366cdef63780db3df]
+@startuml
+
+left to right direction
+actor Jugador
+rectangle pyTetris {
+  usecase "iniciarPartida()" as iniciarPartida
+  usecase "moverPieza()" as moverPieza
+  usecase "rotarPieza()" as rotarPieza
+  usecase "acelerarCaidaPieza()" as acelerarCaidaPieza
+  usecase "pausarReanudarPartida()" as pausarReanudarPartida
+  usecase "finalizarPartida()" as finalizarPartida
+  usecase "verPuntuacion()" as verPuntuacion
+  usecase "limpiarLinea()" as limpiarLinea
+  usecase "verSiguientePieza()" as verSiguientePieza
+}
+Jugador - -> iniciarPartida
+Jugador - -> moverPieza
+Jugador - -> rotarPieza
+Jugador - -> acelerarCaidaPieza
+Jugador - -> pausarReanudarPartida
+Jugador - -> finalizarPartida
+Jugador - -> verPuntuacion
+Jugador - -> limpiarLinea
+Jugador - -> verSiguientePieza
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 11:25:05 CET 2021)
+(MIT source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: es
+Country: ES
+--></g></svg>

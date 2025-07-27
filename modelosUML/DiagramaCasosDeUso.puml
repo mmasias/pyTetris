@@ -1,0 +1,26 @@
+@startuml
+
+left to right direction
+actor Jugador
+rectangle pyTetris {
+  usecase "iniciarPartida()" as iniciarPartida
+  usecase "moverPieza()" as moverPieza
+  usecase "rotarPieza()" as rotarPieza
+  usecase "acelerarCaidaPieza()" as acelerarCaidaPieza
+  usecase "pausarReanudarPartida()" as pausarReanudarPartida
+  usecase "finalizarPartida()" as finalizarPartida
+  usecase "verPuntuacion()" as verPuntuacion
+  usecase "limpiarLinea()" as limpiarLinea
+  usecase "verSiguientePieza()" as verSiguientePieza
+}
+Jugador --> iniciarPartida
+Jugador --> moverPieza
+Jugador --> rotarPieza
+Jugador --> acelerarCaidaPieza
+Jugador --> pausarReanudarPartida
+Jugador --> finalizarPartida
+Jugador --> verPuntuacion
+Jugador --> limpiarLinea
+Jugador --> verSiguientePieza
+
+@enduml 
