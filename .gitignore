@@ -24,6 +24,60 @@ hs_err_pid*
 replay_pid*
 
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+
 # JavaScript/Node.js
 node_modules/
 npm-debug.log*
@@ -44,10 +98,17 @@ build/
 .env.production.local
 
 # IDE files
+
 .vscode/
 .idea/
 *.swp
 *.swo
+
+
+# OS
+.DS_Store
+Thumbs.db
+
 *~
 
 # OS generated files
