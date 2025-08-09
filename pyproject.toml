@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytetris"
+version = "1.0.0"
+authors = [
+    {name = "Converted from Java implementation", email = ""},
+]
+description = "A Python implementation of ASCII Tetris game"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "colorama>=0.4.6",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/mmasias/pyTetris"
+"Bug Tracker" = "https://github.com/mmasias/pyTetris/issues"
+
+[project.scripts]
+pytetris = "python_src.game:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
