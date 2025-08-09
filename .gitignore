@@ -23,6 +23,7 @@
 hs_err_pid*
 replay_pid*
 
+
 # Python
 __pycache__/
 *.py[cod]
@@ -76,11 +77,58 @@ env.bak/
 venv.bak/
 
 # IDEs
+
+# JavaScript/Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+coverage/
+.nyc_output
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+
 .vscode/
 .idea/
 *.swp
 *.swo
 
+
 # OS
 .DS_Store
 Thumbs.db
+
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# .NET build artifacts
+PyTetris.NET/bin/
+PyTetris.NET/obj/
+PyTetris.NET/**/*.dll
+PyTetris.NET/**/*.exe
+PyTetris.NET/**/*.pdb
+PyTetris.NET/**/*.cache
+PyTetris.NET/**/*.props
+PyTetris.NET/**/*.targets
+PyTetris.NET/**/project.lock.json
+PyTetris.NET/**/project.fragment.lock.json
+PyTetris.NET/**/artifacts/

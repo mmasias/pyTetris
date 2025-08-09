@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{245F94C3-F8F2-4413-B1C5-302C0F00DE8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyTetris", "src\PyTetris\PyTetris.csproj", "{1C884CF8-5DA8-4E9C-A491-65F48D17FF03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D2CB973E-69EB-4FB5-85F4-B9FA53B2A8A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyTetris.Tests", "tests\PyTetris.Tests\PyTetris.Tests.csproj", "{DD271E54-07EA-4528-91D6-AFE0384974CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C884CF8-5DA8-4E9C-A491-65F48D17FF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C884CF8-5DA8-4E9C-A491-65F48D17FF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C884CF8-5DA8-4E9C-A491-65F48D17FF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C884CF8-5DA8-4E9C-A491-65F48D17FF03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD271E54-07EA-4528-91D6-AFE0384974CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD271E54-07EA-4528-91D6-AFE0384974CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD271E54-07EA-4528-91D6-AFE0384974CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD271E54-07EA-4528-91D6-AFE0384974CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C884CF8-5DA8-4E9C-A491-65F48D17FF03} = {245F94C3-F8F2-4413-B1C5-302C0F00DE8D}
+		{DD271E54-07EA-4528-91D6-AFE0384974CC} = {D2CB973E-69EB-4FB5-85F4-B9FA53B2A8A0}
+	EndGlobalSection
+EndGlobal
