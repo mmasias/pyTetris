@@ -1,0 +1,26 @@
+{
+  "name": "js-tetris",
+  "version": "1.0.0",
+  "description": "A console-based Tetris game converted from Java to JavaScript",
+  "main": "js-src/index.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs",
+    "src": "src",
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node js-src/index.js",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test:watch": "node --experimental-vm-modules node_modules/.bin/jest --watch",
+    "lint": "eslint js-src test",
+    "lint:fix": "eslint js-src test --fix"
+  },
+  "keywords": ["tetris", "game", "console", "javascript", "node"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.33.0",
+    "jest": "^30.0.5"
+  }
+}
