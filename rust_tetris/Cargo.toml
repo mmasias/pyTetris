@@ -1,0 +1,11 @@
+[package]
+name = "rust_tetris"
+version = "0.1.0"
+edition = "2021"
+authors = ["Tetris Rust Conversion"]
+description = "A console-based Tetris game converted from Java to Rust"
+license = "MIT"
+
+[dependencies]
+rand = "0.8"
+crossterm = "0.27"
