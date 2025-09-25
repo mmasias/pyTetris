@@ -3,6 +3,8 @@ public class Tetris {
     private boolean gameRunning;
     private int score;
     private Console console;
+    boolean[] bagPieceUsed={false,false,false,false,false,false,false};
+
 
     public Tetris(int width, int height) {
         board = new Board(width, height, new Console());
@@ -22,18 +24,15 @@ public class Tetris {
                 PieceFactory.createZPiece()
         };
         
-            boolean[] bagPieceUsed={false,false,false,false,false,false,false};
             int randomIndex = (int) (Math.random() * pieces.length);
 
             if(bagPieceUsed[0]&bagPieceUsed[1]&bagPieceUsed[2]&bagPieceUsed[3]&bagPieceUsed[4]&bagPieceUsed[5]&bagPieceUsed[6]){
-                System.out.println("BAG IS FULLLLLL AAAAAAAA");
                 for (int k=0;k<bagPieceUsed.length;k++){
                     bagPieceUsed[k]=false;
                 }
             }
             while(bagPieceUsed[randomIndex]){
                 int newRandom =(int)(Math.random()*pieces.length);
-                System.out.println("repeat.."+newRandom);
                 randomIndex=newRandom;
             }
 
@@ -42,9 +41,9 @@ public class Tetris {
             
             for (int i=0;i<bagPieceUsed.length;i++){
                 if(bagPieceUsed[i]){
-                    System.out.print("1 ");
+                    console.write("1 ");
                 }else{
-                    System.out.print("0 ");
+                    console.write("0 ");
                 }
             }
             
@@ -101,7 +100,7 @@ public class Tetris {
                 if (!board.canMovePiece(board.getCurrentPiece(), 0, 0)) {
                     gameRunning = false;
                     console.writeln("¡GAME OVER!");
-                    console.writeln("Puntuación final: " + score);
+                    console.writeln("Final Score: " + score);
                 }
             }
         }
