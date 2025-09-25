@@ -24,28 +24,31 @@ public class Tetris {
         
             boolean[] bagPieceUsed={false,false,false,false,false,false,false};
             int randomIndex = (int) (Math.random() * pieces.length);
-            if(bagPieceUsed[randomIndex]=true){
-                //if should be a while but something is wrong
-                    int newRandom = (int) (Math.random() * pieces.length);
-                    if(newRandom!=randomIndex){
-                        randomIndex=newRandom;
-                    }
-                }
-        board.setCurrentPiece(pieces[randomIndex]);
-        bagPieceUsed[randomIndex]=true;
-            for(int i=0,j=0; i<bagPieceUsed.length;i++){
-                if(bagPieceUsed[i]=true){
-                    j++;
-                    System.out.println("Piece Count:"+j);
-                }
-                System.out.println("piece n."+i);
-            if(j==bagPieceUsed.length){
-                System.out.println("all used, new bag");
-                for(int k=0; k<bagPieceUsed.length;k++){
+
+            if(bagPieceUsed[0]&bagPieceUsed[1]&bagPieceUsed[2]&bagPieceUsed[3]&bagPieceUsed[4]&bagPieceUsed[5]&bagPieceUsed[6]){
+                System.out.println("BAG IS FULLLLLL AAAAAAAA");
+                for (int k=0;k<bagPieceUsed.length;k++){
                     bagPieceUsed[k]=false;
-                }    
                 }
             }
+            while(bagPieceUsed[randomIndex]){
+                int newRandom =(int)(Math.random()*pieces.length);
+                System.out.println("repeat.."+newRandom);
+                randomIndex=newRandom;
+            }
+
+            board.setCurrentPiece(pieces[randomIndex]);
+            bagPieceUsed[randomIndex]=true;
+            
+            for (int i=0;i<bagPieceUsed.length;i++){
+                if(bagPieceUsed[i]){
+                    System.out.print("1 ");
+                }else{
+                    System.out.print("0 ");
+                }
+            }
+            
+
     }
 
     private void processUserInput(String input) {
@@ -73,7 +76,7 @@ public class Tetris {
         spawnNewPiece();
         while (gameRunning) {
             board.display();
-            String input = console.readString("Score: " + score + "\n\nComando (4=izq, 6=der, 7=rotar↺, 9=rotar↻): ");
+            String input = console.readString("Score: "+score+"\n\nCommands:(4=left, 6=right, 7=counter↺, 9=clockwise↻): ");
             processUserInput(input);
 
             if (board.canMovePiece(board.getCurrentPiece(), 0, 1)) {
@@ -82,38 +85,17 @@ public class Tetris {
                 board.placePiece(board.getCurrentPiece());
 
                 int linesCleared = board.clearCompleteLines();
-                if (linesCleared==4){
-                 score+=800;  
+                if (linesCleared>4){
+                    linesCleared=4;
                 }
-                if (linesCleared==3){
-                 score+=500;  
-                }
-                if (linesCleared==2){
-                 score+=300;  
-                }
-                if (linesCleared==1){
-                 score+=100;  
-                }
-                
+                int[] linesClearedScore={0,100,300,500,800};
+                String[] linesClearedName={"None","SINGLE","DOUBLE","TRIPLE","TETRIS!"};
 
-                if (linesCleared==1) {
-                    console.writeln("¡" + linesCleared + " línea eliminada! SINGLE");
-                    console.readString("Presiona Enter para continuar...");
+                if (linesCleared>=1){
+                    score+=linesClearedScore[linesCleared];  
+                    console.writeln("¡" + linesCleared + " Lines cleared! "+linesClearedName[linesCleared]);
+                    console.readString("Press Enter to continue...");
                 }
-                if (linesCleared==2) {
-                    console.writeln("¡" + linesCleared + " líneas eliminadas! DOUBLE ");
-                    console.readString("Presiona Enter para continuar...");
-                }
-                if (linesCleared==3) {
-                    console.writeln("¡" + linesCleared + " líneas eliminadas! TRIPLE");
-                    console.readString("Presiona Enter para continuar...");
-                }
-                if (linesCleared==4) {
-                    console.writeln("¡" + linesCleared + " líneas eliminadas! TETRIS!");
-                    console.readString("Presiona Enter para continuar...");
-                }
-
-
                 spawnNewPiece();
 
                 if (!board.canMovePiece(board.getCurrentPiece(), 0, 0)) {
