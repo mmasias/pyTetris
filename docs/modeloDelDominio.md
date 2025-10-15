@@ -119,7 +119,7 @@ El **modelo del dominio** es la fase donde capturamos los **conceptos puros del 
 
 #### ¿Incluir "Jugador"?
 
-**Análisis:**
+**Reflexión:**
 
 - **A favor:** Es quien toma las decisiones
 - **En contra:** En Tetris single-player es implícito
@@ -128,7 +128,7 @@ El **modelo del dominio** es la fase donde capturamos los **conceptos puros del 
 
 #### ¿"Puntuación" y "Nivel" como entidades?
 
-**Análisis:**
+**Reflexión:**
 
 - **A favor:** Son conceptos que los jugadores mencionan
 - **En contra:** Son atributos simples del juego
@@ -137,7 +137,7 @@ El **modelo del dominio** es la fase donde capturamos los **conceptos puros del 
 
 #### ¿"TipoPieza" o formas dentro de "Pieza"?
 
-**Análisis:**
+**Reflexión:**
 
 - **A favor de TipoPieza:** Hay exactamente 7 tipos bien definidos
 - **En contra:** Podría ser solo datos de Pieza
@@ -146,7 +146,7 @@ El **modelo del dominio** es la fase donde capturamos los **conceptos puros del 
 
 #### ¿Cómo modelar los diferentes tipos de movimiento?
 
-**Análisis:**
+**Reflexión:**
 
 - **A favor de especialización:** Hay dos tipos claramente diferenciados: movimientos automáticos (la pieza desciende) y movimientos dirigidos (el jugador controla)
 - **En contra:** Podría ser un simple atributo o enum
@@ -155,7 +155,7 @@ El **modelo del dominio** es la fase donde capturamos los **conceptos puros del 
 
 #### ¿Agregar atributos a los conceptos?
 
-**Análisis:**
+**Reflexión:**
 
 - **A favor:** Ayuda a entender mejor algunos conceptos (ej: Juego.puntuación, Tablero.ancho)
 - **En contra:** Las multiplicidades y relaciones ya comunican la estructura; agregar atributos añade ruido visual
@@ -164,7 +164,7 @@ El **modelo del dominio** es la fase donde capturamos los **conceptos puros del 
 
 ### 7. Refinamiento de relaciones
 
-**Análisis de multiplicidades y tipos:**
+**Especificación de multiplicidades y tipos:**
 
 <div align=center>
 
