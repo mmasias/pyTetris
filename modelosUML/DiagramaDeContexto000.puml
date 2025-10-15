@@ -1,0 +1,17 @@
+@startuml
+
+left to right direction
+
+
+state Inactivo
+state EnCurso
+state Finalizado
+
+[*] -> Inactivo
+Inactivo --> EnCurso
+EnCurso --> Finalizado
+EnCurso -> EnCurso
+Finalizado -> [*]
+Finalizado -> Inactivo
+
+@enduml
