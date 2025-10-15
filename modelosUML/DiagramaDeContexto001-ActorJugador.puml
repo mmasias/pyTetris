@@ -15,8 +15,8 @@ EnCurso -> EnCurso : rotarPieza()
 EnCurso -> EnCurso : acelerarCaída()
 
 EnCurso --> Finalizado
-EnCurso --> Inactivo : reiniciar()
+EnCurso --> Inactivo : reiniciarPartida()
 
-Finalizado --> Inactivo : reiniciar()
+Finalizado --> Inactivo : reiniciarPartida()
 
 @enduml
