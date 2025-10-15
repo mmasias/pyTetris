@@ -20,7 +20,9 @@ Un Tetris ASCII
 
 |Observar||Conceptualizar||Decidir||Construir||Ejecutar|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|[Modelo del dominio](/docs/modeloDelDominio.md)|>>|[Requisitos](/docs/ProcesoRequisitos.md)|>>|[Análisis](/docs/ProcesoAnalisis.md)|>>|[Decisiones tecnológicas](/docs/DecisionesTecnologicas.md)|>>|[Diseño](/docs/ProcesoDiseño.md)|>>|[Código](/src/)
+|[Modelo del dominio](/docs/modeloDelDominio.md)|>>|[Requisitos](/docs/ProcesoRequisitos.md)|>>|Análisis|>>|Decisiones tecnológicas|>>|Diseño|>>|[Código](/src/)
+
+<sub>🚧 Documentos en construcción siguiendo RUP ortodoxo 🚧</sub>
 
 </div>
 
@@ -29,7 +31,3 @@ Un Tetris ASCII
 <sub>[*Motivación*](docs/motivación.md)</sub>
 
 </div>
-
-## 2Think
-
-- [¿Vale la pena la herencia?](docs/valeLaPenaLaHerencia.md)
