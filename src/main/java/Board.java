@@ -74,13 +74,10 @@ public class Board {
         boolean canRotate = canMovePiece(piece, 0, 0);
 
         if (!canRotate) {
+            // Restore original by doing one rotation in opposite direction
             if (clockwise) {
                 piece.rotateCounterClockwise();
-                piece.rotateCounterClockwise();
-                piece.rotateCounterClockwise();
             } else {
-                piece.rotateClockwise();
-                piece.rotateClockwise();
                 piece.rotateClockwise();
             }
         }
