@@ -25,10 +25,14 @@ Los requisitos parten del modelo del dominio que identificó conceptos del mundo
 
 **Técnica**: Análisis de entidades externas que interactúan con el sistema
 
+<div align=center>
+
 |Actor|Descripción|Justificación|
 |-|-|-|
 |Jugador|Persona que controla el juego|Solicita manipulación de piezas y gestión de partida|
 |Tiempo|Disparador temporal|Solicita descenso automático de piezas según intervalo configurado|
+
+</div>
 
 ### Casos de Uso
 
@@ -36,13 +40,22 @@ Los requisitos parten del modelo del dominio que identificó conceptos del mundo
 
 Del modelo del dominio surge:
 
-| Comportamiento Identificado|¿Quién lo Solicita?
+<div align=center>
+
+|Comportamiento identificado|¿Quién lo solicita?
 |-|:-:|
-| Iniciar nueva partida|Jugador |
-|Mover pieza lateralmente|Jugador
-|Rotar pieza|Jugador
-|Acelerar caída de pieza|Jugador
-|Descender pieza automáticamente|Tiempo
+|iniciarPartida()|Jugador |
+|reiniciarPartida()|Jugador |
+|moverPieza()|Jugador
+|rotarPieza()|Jugador
+|acelerarCaida()|Jugador
+|descenderPieza()|Tiempo
+
+
+|![](/images/modelosUML/DiagramaCasosUso.svg)
+|-
+
+</div>
 
 ### Presentar el modelo de casos de uso como un todo
 
