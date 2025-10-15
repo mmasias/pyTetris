@@ -1,0 +1,19 @@
+@startuml
+
+state Inactivo
+state EnCurso
+
+state iniciarPartida as "iniciarPartida()"{
+
+  [*] -[#green]-> TABLERO_VACIO
+
+  TABLERO_VACIO -[#green]-> PRIMERA_PIEZA_GENERADA : Tablero inicializado\n(20 líneas × 10 celdas vacías)\nPuntuación: 0
+
+  PRIMERA_PIEZA_GENERADA -[#green]-> [*] : Primera pieza generada\n(tipo aleatorio)\nPosicionada en centro superior
+
+}
+
+Inactivo -d[#green]-> iniciarPartida : Jugador solicita iniciar partida
+iniciarPartida -[#green]-> EnCurso : Primer turno iniciado
+
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+
+state EnCurso
+state Finalizado
+state EnCurso2 as "EnCurso"
+
+state reiniciarPartida as "reiniciarPartida()"{
+
+  [*] -[#green]-> TABLERO_LIMPIO
+
+  TABLERO_LIMPIO -[#green]-> PIEZA_INICIAL_GENERADA : Tablero reinicializado\n(todas celdas vacías)\nPuntuación: 0
+
+  PIEZA_INICIAL_GENERADA -[#green]-> [*] : Nueva pieza generada\n(tipo aleatorio)\nPosicionada en centro superior
+
+}
+
+EnCurso -d[#green]-> reiniciarPartida : Jugador solicita reiniciar
+Finalizado -d[#green]-> reiniciarPartida : Jugador solicita reiniciar
+reiniciarPartida -[#green]-> EnCurso2 : Nuevo turno 1 iniciado
+
+@enduml

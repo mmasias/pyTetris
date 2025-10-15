@@ -1,0 +1,34 @@
+@startuml
+
+state EnCurso
+state EnCurso2 as "EnCurso"
+
+state acelerarCaida as "acelerarCaida()"{
+
+  [*] -[#green]-> DESCENDIENDO
+
+  DESCENDIENDO -[#green]-> DESCENDIENDO : Pieza desciende una celda
+  DESCENDIENDO -[#green]-> PIEZA_FIJADA : [colisión] / Pieza fijada en tablero
+
+  PIEZA_FIJADA -[#green]-> PIEZA_FIJADA : [línea completa] / Línea eliminada\nLíneas superiores desplazadas\nPuntuación actualizada
+
+  PIEZA_FIJADA -[#green]-> NUEVA_PIEZA_GENERADA : Nueva pieza generada\nPieza posicionada en centro superior
+
+  state c <<choice>>
+
+  NUEVA_PIEZA_GENERADA -[#green]-> c
+
+}
+
+note right of acelerarCaida
+  **Tipo:** MovimientoDirigido
+end note
+
+c -[#green]-> EnCurso2 : [pieza cabe] / Nuevo turno iniciado
+c -[#red]-> Finalizado : [pieza no cabe] / Juego finalizado
+
+EnCurso -d[#green]-> acelerarCaida
+
+Finalizado -[#red]-> [*]
+
+@enduml

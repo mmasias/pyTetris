@@ -1,0 +1,29 @@
+@startuml
+
+state EnCurso
+state EnCurso2 as "EnCurso"
+
+state moverPieza as "moverPieza(dirección)"{
+
+  [*] -[#green]-> VALIDANDO
+
+  state c <<choice>>
+
+  VALIDANDO -[#green]-> c : Jugador solicita mover\n(dirección: izquierda/derecha/abajo)
+
+  c -[#green]-> PIEZA_MOVIDA : [movimiento válido] / Pieza movida a nueva posición
+  c -[#orange]-> MOVIMIENTO_RECHAZADO : [fuera de límites o colisión] / Pieza mantiene posición
+
+  PIEZA_MOVIDA -[#green]-> [*]
+  MOVIMIENTO_RECHAZADO -[#orange]-> [*]
+
+}
+
+note right of moverPieza
+  **Tipo:** MovimientoDirigido
+end note
+
+EnCurso -d[#green]-> moverPieza
+moverPieza -[#green]-> EnCurso2
+
+@enduml

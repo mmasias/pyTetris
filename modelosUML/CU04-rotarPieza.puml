@@ -1,0 +1,29 @@
+@startuml
+
+state EnCurso
+state EnCurso2 as "EnCurso"
+
+state rotarPieza as "rotarPieza()"{
+
+  [*] -[#green]-> CALCULANDO_ROTACION
+
+  state c <<choice>>
+
+  CALCULANDO_ROTACION -[#green]-> c : Jugador solicita rotar / Nueva orientación calculada\n(rotación 90° horaria)
+
+  c -[#green]-> PIEZA_ROTADA : [rotación válida] / Pieza rotada
+  c -[#orange]-> ROTACION_RECHAZADA : [fuera de límites o colisión] / Pieza mantiene orientación
+
+  PIEZA_ROTADA -[#green]-> [*]
+  ROTACION_RECHAZADA -[#orange]-> [*]
+
+}
+
+note right of rotarPieza
+  **Tipo:** MovimientoDirigido
+end note
+
+EnCurso -d[#green]-> rotarPieza
+rotarPieza -[#green]-> EnCurso2
+
+@enduml

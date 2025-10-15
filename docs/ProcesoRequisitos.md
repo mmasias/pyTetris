@@ -77,3 +77,18 @@ Del modelo del dominio surge:
 |![](/images/modelosUML/DiagramaDeContexto001-ActorJugador.svg)|![](/images/modelosUML/DiagramaDeContexto001-ActorTiempo.svg)
 
 </div>
+
+### Detallar los casos de uso
+
+<div align=center>
+
+|||
+|-|:-:|
+iniciarPartida()|![](/images/modelosUML/CU01-iniciarPartida.svg)
+reiniciarPartida()|![](/images/modelosUML/CU02-reiniciarPartida.svg)
+moverPieza()|![](/images/modelosUML/CU03-moverPieza.svg)
+rotarPieza()|![](/images/modelosUML/CU04-rotarPieza.svg)
+acelerarCaida()|![](/images/modelosUML/CU01-acelerarCaida.svg)
+descenderPieza()|![](/images/modelosUML/CU01-descenderPieza.svg)
+
+</div>
