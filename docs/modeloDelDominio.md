@@ -10,6 +10,13 @@
 
 El **modelo del dominio** es la fase donde capturamos los **conceptos puros del mundo real**, sin contaminación tecnológica. Aquí identificamos entidades, relaciones, vocabulario y reglas.
 
+<div align=center>
+
+|![](../images/modelosUML/ModeloDominio.svg)
+|-
+
+</div>
+
 ## Metodología seguida
 
 ### 1. Comprensión del dominio: inmersión en Tetris
@@ -70,7 +77,7 @@ El **modelo del dominio** es la fase donde capturamos los **conceptos puros del 
 |Juego vs Partida|→ **Juego**|"Partida" es más específico para juegos multijugador|
 |Pieza vs Tetrómino|→ **Pieza**|"Pieza" es más natural en español|
 |Bloque vs Celda ocupada|→ Parte de **Pieza**|Los bloques no existen independientemente|
-|Rotación/Caída/Desplazamiento|→ **Movimiento**|Son variantes del mismo concepto|
+|Rotación/Caída/Desplazamiento|→ **Movimiento**|Concepto general con dos tipos: automático (descenso) y dirigido (control del jugador)|
 
 </div>
 
@@ -102,9 +109,9 @@ El **modelo del dominio** es la fase donde capturamos los **conceptos puros del 
 **Relaciones evidentes:**
 
 - "El **juego** se juega en un **tablero**"
-- "El **tablero** está formado por **celdas**"
+- "El **tablero** está compuesto por **líneas**"
+- "Cada **línea** contiene **celdas**"
 - "Las **piezas** ocupan **celdas**"
-- "Una **línea** contiene **celdas**"
 - "Cada **turno** involucra una **pieza**"
 - "Un **turno** permite **movimientos**"
 
@@ -137,6 +144,24 @@ El **modelo del dominio** es la fase donde capturamos los **conceptos puros del 
 
 > **Decisión: incluir TipoPieza** - Es un concepto del dominio que los jugadores reconocen
 
+#### ¿Cómo modelar los diferentes tipos de movimiento?
+
+**Análisis:**
+
+- **A favor de especialización:** Hay dos tipos claramente diferenciados: movimientos automáticos (la pieza desciende) y movimientos dirigidos (el jugador controla)
+- **En contra:** Podría ser un simple atributo o enum
+
+> **Decisión: especializar Movimiento** - Se modela como concepto general con dos especializaciones (MovimientoAutomatico y MovimientoDirigido), ya que representan comportamientos fundamentalmente diferentes del juego que los jugadores reconocen: "la pieza cae sola" vs "yo muevo la pieza"
+
+#### ¿Agregar atributos a los conceptos?
+
+**Análisis:**
+
+- **A favor:** Ayuda a entender mejor algunos conceptos (ej: Juego.puntuación, Tablero.ancho)
+- **En contra:** Las multiplicidades y relaciones ya comunican la estructura; agregar atributos añade ruido visual
+
+> **Decisión: no agregar atributos** - El modelo del dominio se enfoca en conceptos y relaciones. Los atributos se definirán en las fases de análisis y diseño cuando sean necesarios para la implementación.
+
 ### 7. Refinamiento de relaciones
 
 **Análisis de multiplicidades y tipos:**
@@ -147,10 +172,13 @@ El **modelo del dominio** es la fase donde capturamos los **conceptos puros del 
 |-|-|-|
 |Juego - Tablero|Composición 1:1|Un juego tiene exactamente un tablero que no existe sin él|
 |Juego - Pieza (activas)|Agregación 1:*|El juego gestiona piezas, pero estas pueden existir conceptualmente sin un juego|
-|Tablero - Celda|Composición 1:*|Las celdas son parte integral del tablero|
-|Tablero - Línea|Composición 1:*|Las líneas son agrupaciones lógicas de celdas del tablero|
+|Juego - Turno|Composición 1:*|Un juego se desarrolla en turnos que no existen sin el juego|
+|Tablero - Línea|Composición 1:20|El tablero está compuesto por exactamente 20 líneas horizontales|
+|Línea - Celda|Composición 1:10|Cada línea contiene exactamente 10 celdas|
 |Pieza - TipoPieza|Asociación *:1|Cada pieza es de un tipo específico|
-|Línea - Celda|Composición 1:*|Una línea es un conjunto específico de celdas|
+|Pieza - Celda|Asociación 1:(1..4)|Una pieza ocupa entre 1 y 4 celdas del tablero|
+|Turno - Pieza|Asociación 1:1|Cada turno involucra exactamente una pieza|
+|Turno - Movimiento|Agregación 1:*|Un turno permite cero o más movimientos|
 
 </div>
 
@@ -221,7 +249,7 @@ Jugador, Movimiento, Nivel, Velocidad, Turno...
 
 ```
 Juego contiene → Tablero, Piezas, Puntuación
-Tablero contiene → Celdas, Líneas
+Tablero contiene → Celdas
 Pieza ocupa → Celdas
 ```
 
@@ -229,13 +257,18 @@ Pieza ocupa → Celdas
 
 - Se elimina Jugador (implícito)
 - Se agregan TipoPieza y Turno
+- Se introduce jerarquía Tablero → Línea → Celda
+- Se refina Movimiento en especializaciones (Automático y Dirigido)
 - Se refinan multiplicidades
 
 ### Versión 3: Modelo final
 
-- Relaciones claramente tipadas
-- Conceptos del dominio puro
-- Validado contra el vocabulario natural
+- Jerarquía compositiva clara: Tablero → Línea → Celda
+- Especialización de Movimiento en Automático y Dirigido
+- Multiplicidades explícitas en todas las relaciones
+- Relaciones claramente tipadas (composición, agregación, asociación)
+- Conceptos del dominio puro sin contaminación tecnológica
+- Validado contra el vocabulario natural del jugador
 
 ## Lecciones del proceso
 
@@ -263,7 +296,12 @@ Pieza ocupa → Celdas
    - ¿Celda o simplemente posición?
    - ¿Bloque individual o solo Pieza completa?
 
-3. **Resistir features avanzadas**
+3. **Modelar jerarquías compositivas correctas**
+   - Primera versión: Tablero directamente compuesto de Celdas
+   - Refinamiento: Tablero → Línea → Celda
+   - Lección: Escuchar el vocabulario del jugador ("completé una línea")
+
+4. **Resistir features avanzadas**
    - Hold piece, T-spins, wall kicks
    - Importantes en Tetris moderno, pero complican el modelo
 

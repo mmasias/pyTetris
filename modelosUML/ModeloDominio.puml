@@ -1,18 +1,20 @@
 @startuml
 
-Juego *-- Tablero : "se juega en"
-Juego o-- Pieza : "contiene piezas activas"
-Juego *-- Turno : "se desarrolla en turnos"
+Juego "1" *-- "1" Tablero : "se juega en"
+Juego "1" o-- "0..*" Pieza : "contiene piezas activas"
+Juego "1" *-- "1..*" Turno : "se desarrolla en turnos"
 
-Tablero *-- Celda : "está formado por"
-Tablero *-- Linea : "se organiza en"
+Tablero "1" *-- "20" Linea : "compuesto por"
 
-Pieza --> TipoPieza : "es de tipo"
-Pieza --> Celda : "ocupa"
+Pieza "*" --> "1" TipoPieza : "es de tipo"
+Pieza "1" --> "1..4" Celda : "ocupa"
 
-Turno --> Pieza : "involucra"
-Turno o-- Movimiento : "permite"
+Turno "1" --> "1" Pieza : "involucra"
+Turno "1" o-- "0..*" Movimiento : "permite"
 
-Linea *-- Celda : "contiene"
+Movimiento <|-- MovimientoAutomatico : "ejecuta"
+Movimiento <|-- MovimientoDirigido : "permite"
+
+Linea "1" *-- "10" Celda : "contiene"
 
 @enduml
